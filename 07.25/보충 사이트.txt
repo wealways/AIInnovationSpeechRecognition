@@ -1,0 +1,7 @@
+Seq2Seq ¿¹½À
+
+(1) https://wikidocs.net/24996
+
+(2) https://tykimos.github.io/2018/09/14/ten-minute_introduction_to_sequence-to-sequence_learning_in_Keras/
+
+ 

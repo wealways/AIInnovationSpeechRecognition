@@ -1,0 +1,6 @@
+도커 이미지 백업하는 법
+docker login
+docker commit tf 아이디/tf:(태그)
+docker images(여기에 내 도커 이미지를 확인할 수 있음)
+docker push 아이디/tf:(태그)
+
