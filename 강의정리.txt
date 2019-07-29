@@ -14,3 +14,59 @@ np.roll 이게 매트릭스 한칸씩 밀어주는기능있어. 행방향또는 열방향으로
 마지막state만 쓰는거, 정해놓은 벡터에 정보를 다 쑤셔 넣어서 별로인거 같아. 
 그래서 time이 바뀔때마다의 context 벡터 정보들을 사용하기로 했어 (어텐션 이라는 걸 활용해서)
 디코더 부분도 학습할 때, 각각의 상태가 끊어져있다고 보고 t=1에서 나온 정보와 트레인데이터를 함꼐 입력으로 넣어서 
+
+
+7/29
+
+* 한국어 입력을 위한 locale 설정
+(Root 계정으로 수행)
+>> apt-get install language-pack-ko
+>> locale-gen ko_KR.UTF-8
+
+리눅스 조심해야할것! , root계정으로 작업하면 위험할 수 있어!!! 그래서 계정을 하나 새로 만들어서 작업을 할 예정이야
+만드는 법 >> adduser sj     //    새 계정 접속 >> su sj   //  cd~ 워킹디렉토리 처음화면
+
+(User 계정으로 수행)
+>> export LC_ALL=ko_KR.UTF-8
+>> export LANG=ko_KR.UTF-8
+
+locale 이걸로 확인
+
+-----------------------
+bash명령어
+
+echo "hello world"  // 파이썬에서 print()
+pwd // printworkingdirectory
+ls -al  // 현재 디렉토리 파일 목록을 확인
+mkdir test  // test디렉토리 생성
+vim  // 텍스트 파일 생성하는거
+>> vim test.py
+>> print(“123”)
+중간에 esc 눌러주는거 필수!
+>>:wq
+
+cat  //  안에 있는 내용 출력!
+]]  // 맨 뒤로 보내기
+cp test.py test2.py  //  파일 복사하기
+mv tes2.py print.py  //  파일명 변경하기
+q  //  환경나가기
+find ./wav/*.wav  // wav폴더 안의 .wav 파일 다 찾기
+find ./wav/*.wav > wav_list.txt  // wav 파일 찾은것들 파일명 리스트만들기
+find ./wav/*.wav >> wav_list.txt  // wav 파일 찾은것들 파일명 리스트에 추가
+
+
+----------------------------------
+
+.bashrc 수정해서 한글 계속 쓸 수 있게 만들기
+vim .bashrc
+insert키 누른 후
+>> export LC_ALL=ko_KR.UTF-8
+>> export LANG=ko_KR.UTF-8
+:wq
+
+-------------------------------
+shell script 작성해서 쉽게 사용할 수 있어,,
+
+
+
+
