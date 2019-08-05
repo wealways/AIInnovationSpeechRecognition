@@ -68,5 +68,53 @@ insert키 누른 후
 shell script 작성해서 쉽게 사용할 수 있어,,
 
 
+7/30
+구글 ( kaldi asr , kaldi openslr )
+voice.mozilla.org // 음성데이터 무료제공 !
 
+도커 칼디 컨테이너에 압축파일 올리기
+docker cp D:\data\librispeech_corpus.tar.gz kaldi:/usr/local/kaldi/egs/librispeech/s5/
+mv kaldi /home/sj
+cd /usr/local/
+mkdir kaldi
+cd kaldi/
+mkdir src
+권한부여
+cd /home/sj
+chown -R sj:sj kaldi
+내꺼 계정가서 이제 사용하기
+tar xvfz librispeech_lm.tar.gz
+tar xvfz librispeech_corpus.tar.gz
+chown sj:sj run.lecture.sh
+
+vim cmd.sh
+run.pl 이걸로 다 바꿔주기
+vim run.lecture.sh
+stage=1로바꾸기
+
+root에서 apt-get install flac ffmpeg
+
+./run.lecture.sh 실행
+
+
+========================================
+7/31 
+도커 kaldi 이거 지금까지 한거 문제가 있었어. 그래서 고칠 예정
+mv kaldi ..
+chown -R sj:sj /usr/local/kaldi
+(sj에 있는 kaldi를 root로 옮겨준후, root에서 권한을 sj에게 주는 걸로 바꾸기)
+
+su sj 이걸로 가서
+여기에 kaldi 바로가기 디렉토리하나 만들어주기
+>> ln -s /usr/local/kaldi kaldi
+
+vim .bashsr 
+마지막에 export libri=~/kaldi/egs/librispeech/s5 이거 만들어주기!
+source ~/.bashrc
+cd $libri/
+
+time ./run.lecture.sh  
+
+
+==========================================
 
